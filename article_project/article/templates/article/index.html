@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Статьи</title>
+</head>
+<body>
+    <h1 align="center">Список статей</h1>
+    <ul>
+    {% for article in articles %}
+
+<li><h3><a href="{% url 'article:detail' article.id %}">{{ article.header }}</a></h3></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
