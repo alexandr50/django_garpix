@@ -1,0 +1,13 @@
+{% extends 'article/base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+<p>Результат поиска {{ name_user }}:</p>
+    {% if names %}
+{% for name in names %}
+<ul>
+    <li><p>{{ name }}</p></li>
+</ul>
+
+    {% endfor %}
+    {% endif %}
+{% endblock %}

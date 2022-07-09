@@ -1,0 +1,6 @@
+{% extends 'article/base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+<h1>Добро пожаловать {{ new_user.firs_name }}</h1>
+<p>Регистрация прошла успешно, теперь вы можете <a href="{% url 'users:login' %}">залогиниться</a>.</p>
+{% endblock %}

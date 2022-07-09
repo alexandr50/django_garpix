@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1 align="center">{{ article.header }}</h1>
-    {% for c in com %}
-    <h4>{{ c.author }}</h4>
-    <p>{{ c.text }}</p>
-    {% endfor %}
-</body>
-</html>
+{% extends 'article/base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+{% if user.is_authenticated %}
+<p>фильтация комментариев по дате</p>
+
+<form action="{% url 'article:date_filter' %}" method="GET">
+    <label for="start">Start date:</label>
+    <input type="date" id="start" name="start">
+    <button type="submit">Subbmit</button>
+</form>
+{% endif %}
+
+<h1 align="center">{{ article.header }}</h1>
+{% for c in com %}
+<h4>{{ c.author }}</h4>
+<p>{{ c.text }}</p>
+{% endfor %}
+{% endblock %}

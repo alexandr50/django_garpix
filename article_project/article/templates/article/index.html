@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Статьи</title>
-</head>
-<body>
+{% extends 'article/base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+
     <h1 align="center">Список статей</h1>
+<form action="{% url 'article:index_filter' %}" method="GET">
+<!--    <label for="name">Search</label>-->
+    <input type="text" id="name" name="name">
+    <button type="submit">Subbmit</button>
+</form>
     <ul>
     {% for article in articles %}
 
 <li><h3><a href="{% url 'article:detail' article.id %}">{{ article.header }}</a></h3></li>
     {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

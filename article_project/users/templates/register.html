@@ -1,0 +1,10 @@
+{% extends 'article/base.html' %}
+{% block title %}Регистрация пользователя{% endblock %}
+{% block body %}
+
+<form action="." method="post">
+    {{ user_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="register"></p>
+</form>
+{% endblock %}

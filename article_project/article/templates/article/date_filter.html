@@ -1,0 +1,10 @@
+{% extends 'article/base.html' %}
+{% block title %}{% endblock %}
+{% block body %}
+    {% if date %}
+<p>Коментарии с даты {{ date }}</p>
+{% for comment in comments %}
+    <p>{{ comment }}</p>
+    {% endfor %}
+    {% endif %}
+{% endblock %}
