@@ -14,8 +14,8 @@ class Article(models.Model):
 
 class Comments(models.Model):
     name_art = models.ForeignKey(Article, on_delete=models.CASCADE)
-    author = models.CharField(max_length=50)
-    text = models.TextField(max_length=1000)
+    author = models.CharField(max_length=50, verbose_name='автор')
+    text = models.TextField(max_length=1000, verbose_name='текст')
     created_at = models.DateTimeField(verbose_name='дата создания', default=now)
 
     def __str__(self):
